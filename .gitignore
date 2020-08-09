@@ -206,9 +206,4 @@ typings/
 ###############################
 
 ## Custom
-
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/vcs.xml
-/.idea/inspectionProfiles/profiles_settings.xml
-/.idea/django-react-template.iml
+/.idea/
