@@ -30,6 +30,20 @@ django-admin startproject <project-name> .
 
 At this point the back-end framework is installed and ready to be configured.
 
+### Install Front-End Dependencies
+
+``cd`` in ``frontend/`` and run:
+
+````
+yarn add webpack webpack-cli --save-dev
+yarn add @babel/core babel-loader @babel/preset-env @babel/preset-react --save-dev
+yarn add react react-dom --save-dev
+yarn add @storybook/react --save-dev
+cd ..
+````
+
+To add dependencies for the front-end side of things, use ``npm`` or ``yarn`` from the ``frontend/`` directory.
+
 ### Creating Django Applications
 
 In Django, each *project* (created with ``django-admin startproject [...]`` command) can have multiple *applications* 
