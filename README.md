@@ -1,5 +1,5 @@
 # django-react-template
-Simple Django back-end + React front-end web application template for PyCharm
+Simple Django back-end + React front-end web application template.
 
 This project template is set up to have **React** as the sole front-end framework, which communicates
 to the back-end through ajax calls. The back-end is set up with **Django** (Python).
