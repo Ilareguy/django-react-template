@@ -207,4 +207,4 @@ typings/
 
 ## Custom
 /.idea/
-/django_react/secret_key.txt
+/frontend/static/frontend/main.js
