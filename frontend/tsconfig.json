@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es2020",
+    "allowJs": true,
+    "strict": true,
+    "strictNullChecks": false,
+    "moduleResolution": "Node",
+    "baseUrl": "./src/",
+    "typeRoots": ["./node_modules/@types"],
+    "jsx": "react",
+    "sourceMap": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
