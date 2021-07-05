@@ -7,6 +7,14 @@ module.exports = {
     // https://webpack.js.org/guides/typescript/#source-maps
     devtool: 'source-map',
 
+    output: {
+        path: './static',
+        filename: 'main.js',
+        library: {
+            type: "global" // global is fine currently when exporting a final, fully transpiled web app
+        }
+    },
+
     module: {
         rules: [
             {

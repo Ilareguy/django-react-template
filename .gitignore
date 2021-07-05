@@ -207,4 +207,6 @@ typings/
 
 ## Custom
 /.idea/
-/frontend/static/frontend/main.js
+/frontend/static/main.js
+/frontend/static/main.js.map
+/frontend/static/project.css

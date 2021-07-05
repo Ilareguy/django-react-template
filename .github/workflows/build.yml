@@ -1,0 +1,89 @@
+name: Build and Release
+
+on:
+  push:
+    branches: [ build ]
+
+env:
+  PYTHON_VERSION: '3.8' # set this to the python version to use
+
+jobs:
+  build:
+    name: Build Website
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Keep frontend only
+        run: |
+          rm -rf assets
+          rm -rf django_react
+          rm -rf frontend/templates
+          rm -rf frontend/migrations
+          rm -f manage.py
+          rm -f README.md
+          rm -f requirements.txt
+          rm -f secret_key.txt
+          rm -f ./frontend/*.py
+          mv ./frontend/* ./
+          mv ./frontend/.babelrc ./.babelrc
+          ls -A
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Setup yarn
+        run: |
+          npm install -g yarn
+          yarn set version latest
+          yarn install
+      - name: Build
+        run: |
+          yarn run build:prod
+      - name: Publish artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: package
+          path: |
+            ./static/**
+            ./index.html
+            ./CNAME
+  deploy:
+    name: Deploy Website
+    runs-on: ubuntu-latest
+    needs: [ build ]
+    steps:
+
+    - name: Checkout release branch
+      uses: actions/checkout@v2
+      with:
+        ref: 'release'
+        fetch-depth: 0
+
+    - name: Remove files
+      run: |
+        rm -rf *
+        rm -rf .idea
+        rm -rf .github
+        rm -rf .storybook
+        rm -f .babelrc
+    - name: Acquire artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: package
+
+    - name: Add files to git
+      run: |
+        git add -A
+    - name: Commit changes
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Automatic deployment
+        commit_options: '--no-verify --signoff'
+        push_options: '--force'
+        skip_dirty_check: true
+        skip_fetch: true

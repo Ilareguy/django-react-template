@@ -4,25 +4,6 @@ Simple Django back-end + React front-end web application template.
 This project template is set up to have **React** as the sole frontend framework, which communicates
 with the backend's REST framework. The backend is set up to run **Django**.
 
-## PyCharm
-
-For you convenience, I have added PyCharm run configurations in this project. They are not required by any means so you
-can safely delete the ``.run/`` directory if you don't plan on using PyCharm.
-
-Do note however that some of these configurations may not be configured properly for your system. You may have to change
-some paths for them to work.
-
-The different configurations are:
- - ``Django``: Starts the Django server. Django will hot-reload if you edit its source files. This command won't work 
-   until you create your Python virtual environment (scroll down a few paragraphs).
- - ``Install frontend dependencies``: Installs frontend dependencies. You should run this at least once after you have
-cloned/downloaded this repository.
- - ``Storybook``: Starts Storybook. Once running, Storybook will automatically hot-reload your React components as you
-   edit their source files.
- - ``Build React app (dev)``: Bundles your project's React components into a single file, suitable for development/debugging
-purposes. If you plan on using Storybook, you may not need to use this run configuration very much.
- - ``Build React app (production)``: Same as above, but the final output file is suitable for production.
-
 ## Usage
 
 The following commands must be run from the system terminal/console. Naturally, the Python executable and npm/yarn must

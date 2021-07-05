@@ -7,9 +7,13 @@
     "strictNullChecks": false,
     "moduleResolution": "Node",
     "baseUrl": "./src/",
-    "typeRoots": ["./node_modules/@types"],
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
     "jsx": "react",
-    "sourceMap": true
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "outDir": "./static/"
   },
   "include": [
     "src/**/*"
