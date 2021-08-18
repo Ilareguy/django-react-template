@@ -71,6 +71,7 @@ jobs:
         rm -rf .github
         rm -rf .storybook
         rm -f .babelrc
+        rm -f .gitignore
     - name: Acquire artifact
       uses: actions/download-artifact@v2
       with:
