@@ -1,11 +1,9 @@
 module.exports = {
+    mode: 'jit',
     // Purging: See https://tailwindcss.com/docs/optimizing-for-production
-    purge: {
-        enabled: (process.env.CSS_PURGE === 'true'),
-        content: [
-            './static/main.js',
-        ]
-    },
+    purge: [
+        './src/**/*.{js,jsx,ts,tsx,mdx}',
+    ],
     darkMode: 'media',
     theme: {
         extend: {},

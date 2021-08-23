@@ -1,6 +1,6 @@
 module.exports = {
     resolve: {
-        extensions: ['.tsx', '.ts', '.js', '.jsx'],
+        extensions: ['.tsx', '.ts', '.js', '.jsx', '.mdx', '.css'],
     },
 
     // https://webpack.js.org/configuration/devtool/
@@ -11,30 +11,32 @@ module.exports = {
         path: './static',
         filename: 'main.js',
         library: {
-            type: "global" // global is fine currently when exporting a final, fully transpiled web app
+            type: "global" // "global" is fine currently when exporting a final, fully transpiled web app
         }
     },
 
     module: {
         rules: [
             {
-                test: /\.(js|jsx)?$/,
+                test: /\.(js|jsx|tsx|ts)?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader"
                 }
             },
             {
-                test: /\.(ts|tsx)?$/,
-                use: {
-                    loader: 'ts-loader'
-                },
-                exclude: /node_modules/
-            },
-            {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader", "postcss-loader"]
+                use: [{
+                    loader: 'postcss-loader',
+                    options: {
+                        config: {
+                            path: 'postcss.config.js'
+                        },
+                        ident: 'postcss',
+                        sourceMap: true,
+                    }
+                }]
             }
         ]
-    }
+    },
 };

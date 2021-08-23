@@ -38,7 +38,7 @@ class KijComponent extends React.Component<Props, State>
 
     render()
     {
-        return (<div className={"p-2 bg-gray-200 rounded-lg"}>{this.props.children}</div>);
+        return (<div className={"p-2 bg-gray-100 rounded-lg"}>{this.t("hello")}</div>);
     }
 }
 
