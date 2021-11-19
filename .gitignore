@@ -209,4 +209,5 @@ typings/
 /.idea/
 /frontend/static/main.js
 /frontend/static/main.js.map
-/frontend/static/project.css
+/frontend/static/main.js.LICENSE.txt
+/frontend/static/css/project.css

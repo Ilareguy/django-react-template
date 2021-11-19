@@ -12,11 +12,11 @@ export interface PublicProps
 {
 }
 
-type Props = PublicProps | PrivateProps;
+type Props = PublicProps & PrivateProps;
 
 type State = {}
 
-class KijComponent extends React.Component<Props, State>
+class ManagedComponent extends React.Component<Props, State>
 {
     constructor(props: Readonly<Props>)
     {
@@ -38,15 +38,20 @@ class KijComponent extends React.Component<Props, State>
 
     render()
     {
-        return (<div className={"p-2 bg-gray-100 rounded-lg"}>{this.t("hello")}</div>);
+        return (
+            <div>
+                <p>Hello, World!</p>
+            </div>
+        );
     }
 }
 
-export const Component: React.FC<Props> = (props: PropsWithChildren<Props>) =>
+//export const Component: React.FC<PublicProps> = (props: Readonly<PublicProps>) =>
+export const Component: React.FC<PublicProps> = (props: PropsWithChildren<PublicProps>) =>
 {
     const {t, i18n} = useTranslation();
 
     return (
-        <KijComponent t={t} i18n={i18n} {...props}>{props.children}</KijComponent>
+        <ManagedComponent t={t} i18n={i18n} {...props}>{props.children}</ManagedComponent>
     );
 };

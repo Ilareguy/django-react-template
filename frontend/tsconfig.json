@@ -1,21 +1,28 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "es2020",
+    "module": "esnext",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "allowJs": true,
     "strict": true,
     "strictNullChecks": false,
-    "moduleResolution": "Node",
-    "baseUrl": "./src/",
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
+    "moduleResolution": "node",
+    "baseUrl": "",
     "jsx": "react",
     "sourceMap": true,
     "esModuleInterop": true,
-    "outDir": "./static/"
+    "outDir": "./static/",
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": [
-    "src/**/*"
+    "./src/**/*",
+    "./.storybook/**/*"
+  ],
+  "exclude": [
+    "./node_modules/"
   ]
 }
