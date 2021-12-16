@@ -20,8 +20,8 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 if DEVELOPMENT:
     DEFAULT_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
     STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
-    STATIC_URL = '/static/'
-    STATIC_URL_PATH = f'http://127.0.0.1:8000{STATIC_URL}'
+    STATIC_URL = 'http://localhost:8080/static/'
+    STATIC_URL_PATH = 'http://localhost:8080/static/'
     # STATIC_URL = f'https://gro-api-static.nyc3.digitaloceanspaces.com/static-dev/'
     SITE_URL = 'http://your-dev-url.com'
     SITE_WS_URL = 'ws://your-dev-url.com/ws'
