@@ -1,6 +1,9 @@
 # django-react-template
 Simple Django back-end + React front-end web application template.
 
+The repository is updated every few weeks, but this README is not actively maintained. Some information might not be
+accurate anymore.
+
 This project template is set up to have **React** as the sole frontend framework, which communicates
 with the backend's REST framework. The backend is set up to run **Django**.
 
@@ -73,16 +76,3 @@ INSTALLED_APPS = [
 /venv/                      <-- Python virtual environment
 ````
 
-## React Components
-
-When you are developing your React components (located in ``frontend/src/components/``), to see the changes appear
-in your browser, you have two options:
-   1. **Run Storybook**. While Storybook is running, your browser will automatically reload your components when you save
-   your changes. This is the fastest way to view and test out your components. You can find out more about Storybook 
-   [here](https://storybook.js.org/docs/react/get-started/introduction).
-   2. **Django**. You can start the Django server and point your browser to its address (typically http://127.0.0.1:8000/).
-   When you have made changes to your React components, you must re-build them into a bundled file (which can be achieved 
-   with the ``Build React app (dev)`` or ``Build React app (production)`` run configuration or by running ``yarn run dev``
-   in your terminal). Once done, you must force-reload your browser to see the changes. Note that sometimes simply
-   reloading your tab isn't enough, as it has saved a copy of the old final bundled Javascript file in its cache.
-   Force-reloading is the way to go. Obviously this method is a lot more tedious than simply running Storybook.
