@@ -1,6 +1,82 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
+
+/*!
+ * Web Fonts from Fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at https://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2022 Fontspring
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      Mark Simonson Studio
+ * License URL: https://www.fontspring.com/licenses/mark-simonson-studio/webfont
+ *
+ *
+ */
+
+/*noinspection ALL*/
+@font-face {
+    font-family: 'proximanova';
+    src: url('../webfonts/proximanova-regular-webfont.woff2') format('woff2'),
+    url('../webfonts/proximanova-regular-webfont.woff') format('woff');
+    font-weight: 400;
+}
+
+/*noinspection ALL*/
+@font-face {
+    font-family: 'proximanova';
+    src: url('../webfonts/proximanova-light-webfont.woff2') format('woff2'),
+    url('../webfonts/proximanova-light-webfont.woff') format('woff');
+    font-weight: 300;
+}
+
+/*noinspection ALL*/
+@font-face {
+    font-family: 'proximanova';
+    src: url('../webfonts/proximanova-thin-webfont.woff2') format('woff2'),
+    url('../webfonts/proximanova-thin-webfont.woff') format('woff');
+    font-weight: 100;
+}
+
+/*noinspection ALL*/
+@font-face {
+    font-family: 'proximanova';
+    src: url('../webfonts/proximanova-bold-webfont.woff2') format('woff2'),
+    url('../webfonts/proximanova-bold-webfont.woff') format('woff');
+    font-weight: 700;
+}
+
+/*noinspection ALL*/
+@font-face {
+    font-family: 'proximanova';
+    src: url('../webfonts/proximanova-black-webfont.woff2') format('woff2'),
+    url('../webfonts/proximanova-black-webfont.woff') format('woff');
+    font-weight: 900;
+}
+
+@layer base {
+    body {
+        @apply font-primary text-slate-800 bg-blue-50 /*dark:bg-gray-900 dark:text-gray-400*/;
+    }
+
+    h1, h2{
+        font-family: 'proximanova', sans-serif;
+        font-weight: 600;
+    }
+}
 
 :root {
     --color-primary-100: hsl(0, 0%, 80%);
@@ -31,345 +107,7 @@
     --color-brand-dark-800: hsl(210, 9%, 4%);
 }
 
-@variants hover, responsive {
-    .font-size-12 {
-        font-size: 12px;
-    }
-
-    .font-size-14 {
-        font-size: 14px;
-    }
-
-    .font-size-16 {
-        font-size: 16px;
-    }
-
-    .font-size-18 {
-        font-size: 18px;
-    }
-
-    .font-size-20 {
-        font-size: 20px;
-    }
-
-    .font-size-24 {
-        font-size: 24px;
-    }
-
-    .font-size-30 {
-        font-size: 30px;
-    }
-
-    .font-size-36 {
-        font-size: 36px;
-    }
-
-    .font-size-40 {
-        font-size: 40px;
-    }
-
-    .font-size-48 {
-        font-size: 48px;
-    }
-
-    .font-size-60 {
-        font-size: 60px;
-    }
-
-    .font-size-72 {
-        font-size: 72px;
-    }
-
-    .bg-neutral-100 {
-        background-color: var(--color-primary-100);
-    }
-
-    .bg-neutral-200 {
-        background-color: var(--color-neutral-200);
-    }
-
-    .bg-neutral-300 {
-        background-color: var(--color-neutral-300);
-    }
-
-    .bg-neutral-400 {
-        background-color: var(--color-neutral-400);
-    }
-
-    .bg-neutral-500 {
-        background-color: var(--color-neutral-500);
-    }
-
-    .bg-neutral-600 {
-        background-color: var(--color-neutral-600);
-    }
-
-    .bg-neutral-700 {
-        background-color: var(--color-neutral-700);
-    }
-
-    .bg-neutral-800 {
-        background-color: var(--color-neutral-800);
-    }
-
-    .bg-neutral-900 {
-        background-color: var(--color-neutral-900);
-    }
-
-    .bg-primary-100 {
-        background-color: var(--color-primary-100);
-    }
-
-    .bg-primary-200 {
-        background-color: var(--color-primary-200);
-    }
-
-    .bg-primary-300 {
-        background-color: var(--color-primary-300);
-    }
-
-    .bg-primary-400 {
-        background-color: var(--color-primary-400);
-    }
-
-    .bg-primary-500 {
-        background-color: var(--color-primary-500);
-    }
-
-    .bg-primary-600 {
-        background-color: var(--color-primary-600);
-    }
-
-    .bg-primary-700 {
-        background-color: var(--color-primary-700);
-    }
-
-    .bg-primary-800 {
-        background-color: var(--color-primary-800);
-    }
-
-    .bg-primary-900 {
-        background-color: var(--color-primary-900);
-    }
-
-    .bg-brand-dark-300 {
-        background-color: var(--color-brand-dark-300);
-    }
-
-    .bg-brand-dark-400 {
-        background-color: var(--color-brand-dark-400);
-    }
-
-    .bg-brand-dark-500 {
-        background-color: var(--color-brand-dark-500);
-    }
-
-    .bg-brand-dark-600 {
-        background-color: var(--color-brand-dark-600);
-    }
-
-    .bg-brand-dark-700 {
-        background-color: var(--color-brand-dark-700);
-    }
-
-    .bg-brand-dark-800 {
-        background-color: var(--color-brand-dark-800);
-    }
-
-    .color-primary-100 {
-        color: var(--color-primary-100);
-    }
-
-    .color-primary-200 {
-        color: var(--color-primary-200);
-    }
-
-    .color-primary-300 {
-        color: var(--color-primary-300);
-    }
-
-    .color-primary-400 {
-        color: var(--color-primary-400);
-    }
-
-    .color-primary-500 {
-        color: var(--color-primary-500);
-    }
-
-    .color-primary-600 {
-        color: var(--color-primary-600);
-    }
-
-    .color-primary-700 {
-        color: var(--color-primary-700);
-    }
-
-    .color-primary-800 {
-        color: var(--color-primary-800);
-    }
-
-    .color-primary-900 {
-        color: var(--color-primary-900);
-    }
-
-    .color-neutral-100 {
-        color: var(--color-neutral-100);
-    }
-
-    .color-neutral-200 {
-        color: var(--color-neutral-200);
-    }
-
-    .color-neutral-300 {
-        color: var(--color-neutral-300);
-    }
-
-    .color-neutral-400 {
-        color: var(--color-neutral-400);
-    }
-
-    .color-neutral-500 {
-        color: var(--color-neutral-500);
-    }
-
-    .color-neutral-600 {
-        color: var(--color-neutral-600);
-    }
-
-    .color-neutral-700 {
-        color: var(--color-neutral-700);
-    }
-
-    .color-neutral-800 {
-        color: var(--color-neutral-800);
-    }
-
-    .color-neutral-900 {
-        color: var(--color-neutral-900);
-    }
-
-    .border-color-primary-100 {
-        border-color: var(--color-primary-100);
-    }
-
-    .border-color-primary-200 {
-        border-color: var(--color-primary-200);
-    }
-
-    .border-color-primary-300 {
-        border-color: var(--color-primary-300);
-    }
-
-    .border-color-primary-400 {
-        border-color: var(--color-primary-400);
-    }
-
-    .border-color-primary-500 {
-        border-color: var(--color-primary-500);
-    }
-
-    .border-color-primary-600 {
-        border-color: var(--color-primary-600);
-    }
-
-    .border-color-primary-700 {
-        border-color: var(--color-primary-700);
-    }
-
-    .border-color-primary-800 {
-        border-color: var(--color-primary-800);
-    }
-
-    .border-color-primary-900 {
-        border-color: var(--color-primary-900);
-    }
-
-    .border-color-neutral-100 {
-        border-color: var(--color-neutral-100);
-    }
-
-    .border-color-neutral-200 {
-        border-color: var(--color-neutral-200);
-    }
-
-    .border-color-neutral-300 {
-        border-color: var(--color-neutral-300);
-    }
-
-    .border-color-neutral-400 {
-        border-color: var(--color-neutral-400);
-    }
-
-    .border-color-neutral-500 {
-        border-color: var(--color-neutral-500);
-    }
-
-    .border-color-neutral-600 {
-        border-color: var(--color-neutral-600);
-    }
-
-    .border-color-neutral-700 {
-        border-color: var(--color-neutral-700);
-    }
-
-    .border-color-neutral-800 {
-        border-color: var(--color-neutral-800);
-    }
-
-    .border-color-neutral-900 {
-        border-color: var(--color-neutral-900);
-    }
-
-    .inner-light-sm {
-        -moz-box-shadow: inset 0 1px 2px -2px #eeeeee;
-        -webkit-box-shadow: inset 0 1px 2px -2px #eeeeee;
-        box-shadow: inset 0 1px 2px -2px #eeeeee;
-    }
-}
-
-@layer base {
-    .font-number {
-        font-family: "Saira", serif;
-        font-weight: 400;
-    }
-
-    .font-number-light {
-        @apply font-number;
-        font-weight: 300;
-    }
-
-    .font-number-bold {
-        @apply font-number;
-        font-weight: 500;
-    }
-
-    .font-secondary {
-        font-family: sans-serif;
-    }
-
-    .font-primary {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 400; /* default */
-    }
-
-    .font-primary-light {
-        @apply font-primary;
-        font-weight: 300;
-    }
-
-    .font-primary-bold {
-        @apply font-primary;
-        font-weight: 700;
-    }
-
-    .font-code {
-        font-family: monospace;
-    }
-
-    body {
-        @apply bg-blue-50 font-primary font-normal text-sm;
-    }
-
+@layer components {
     .spinner {
         position: relative;
         display: inline-block;
@@ -493,5 +231,21 @@
         100% {
             background-color: transparent;
         }
+    }
+}
+
+@layer utilities {
+    .font-primary {
+        font-family: 'proximanova', sans-serif;
+    }
+
+    .font-code {
+        font-family: monospace;
+    }
+
+    .highlight-white {
+        box-sizing: border-box;
+        border: 0 solid;
+        box-shadow: inset 0 1px 0 0 rgb(255 255 255/.05);
     }
 }

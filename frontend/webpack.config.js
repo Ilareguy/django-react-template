@@ -1,16 +1,34 @@
+const isProductionBuild = process.argv[process.argv.indexOf('--mode') + 1] === 'production';
+console.log(`Using ${isProductionBuild ? "production" : "development"} build`);
 const path = require('path');
-
-const isProductionBuild = process.env.npm_lifecycle_event === 'build:prod';
-console.log(isProductionBuild ? "Production build" : "Development build");
 
 module.exports = {
     resolve: {
         extensions: ['.tsx', '.ts', '.js', '.jsx'],
+        alias: isProductionBuild ? {} : {
+            'react-dom': '@hot-loader/react-dom'
+        }
     },
 
     // https://webpack.js.org/configuration/devtool/
     // https://webpack.js.org/guides/typescript/#source-maps
     devtool: isProductionBuild ? 'nosources-source-map' : 'source-map',
+    devServer: {
+        static: './',
+        hot: true,
+        host: 'localhost',
+        port: 8080,
+        webSocketServer: 'ws',
+        client: {
+            progress: true,
+        },
+        allowedHosts: 'all',
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "*",
+            "Access-Control-Allow-Headers": "*"
+        }
+    },
 
     watchOptions: {
         ignored: './node_modules',
@@ -25,7 +43,7 @@ module.exports = {
 
     output: {
         path: './static',
-        filename: 'main.js',
+        filename: isProductionBuild ? 'main.js' : './static/main.js',
         chunkFilename: isProductionBuild ? 'pages/[id].[chunkhash].js' : 'pages/[id].js',
         library: {
             type: "global",
