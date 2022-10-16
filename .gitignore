@@ -200,14 +200,12 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
-#.env # Already added
-
 ###############################
 
 ## Custom
-/.idea/
-/frontend/static/main.js
-/frontend/static/main.js.map
-/frontend/static/main.js.LICENSE.txt
-/frontend/static/css/project.css
+.idea/
+src/project/frontend/node_modules
+src/project/frontend/static/main.js
+src/project/frontend/static/main.js.map
+src/project/frontend/static/main.js.LICENSE.txt
+src/project/frontend/static/css/project.css

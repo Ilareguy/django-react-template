@@ -2,7 +2,7 @@ import uuid
 
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-from core.managers import MyBaseUserManager
+from project.core.managers import MyBaseUserManager
 
 
 class BaseUser(AbstractUser):

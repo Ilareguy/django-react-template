@@ -16,7 +16,6 @@ LOCALHOST_DEV = True if os.getenv('LOCALHOST_DEV') == 'true' else False
 DEVELOPMENT = True if os.getenv('DEVELOPMENT') == 'true' else False
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
-
 if DEVELOPMENT:
     DEFAULT_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
     STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
@@ -31,7 +30,6 @@ else:
     SITE_WS_URL = 'wss://www.your-prod-url.com/ws'
     STATIC_URL = f"{SITE_URL}/static/"
 
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-    'core',
-    'frontend',
+    'project.core',
+    'project.frontend',
 
 ]
 
@@ -68,11 +66,11 @@ AUTHENTICATION_BACKENDS = (
     'guardian.backends.ObjectPermissionBackend',
 )
 
-ROOT_URLCONF = 'django_react.urls'
+ROOT_URLCONF = 'project.django_react.urls'
 ANONYMOUS_USER_NAME = 'Guest'
 AUTH_USER_MODEL = 'core.BaseUser'
-ASGI_APPLICATION = 'django_react.asgi.application'
-WSGI_APPLICATION = 'django_react.wsgi.application'
+ASGI_APPLICATION = 'project.django_react.asgi.application'
+WSGI_APPLICATION = 'project.django_react.wsgi.application'
 
 TEMPLATES = [
     {
@@ -90,7 +88,6 @@ TEMPLATES = [
     },
 ]
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -100,7 +97,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -119,7 +115,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
